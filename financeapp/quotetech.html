@@ -1,0 +1,69 @@
+
+<html>
+<head>
+	<title>FINANCE APP</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+		<div class="jumbotron">
+			<h1 class=" text-center">FINANCE APP</h1>
+
+		</div>
+		<div class="container">
+			<div class="row">
+				  <div class="col-md-12">
+				  		<h3>Stock Status</h3>
+						<div class="form-group">
+							 <label for="stock">Please enter company ticket/symbol. <a href="http://www.nasdaq.com/symbol/" target="_blank">Help</a></label>
+							 <input type="text" class="form-control" id="stock">
+						</div>
+						<button id="primary-btn" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Primary</button> 
+						
+				  	</div>
+				
+			</div>
+		</div>
+
+	  	<div class="container">
+		  	<div class="row">
+		  		<div class="col-md-12 ">
+			  		<table class="table table-hover" id="theTable">
+			  			<tr>
+			  				<th>COMPANY</th>
+			  				<th>DATE</th>
+			  				<th>OPEN</th>
+			  				<th>DAY HIGH</th>
+			  				<th>DAY LOW</th>
+			  				<th>CLOSE</th>
+			  			</tr>
+					</table>
+		  		</div>
+		  	</div>
+	  	</div>
+
+	  	<!-- <div id="myModal" class="modal fade success" role="dialog">
+	            <div class="modal-dialog">
+	                <div class="modal-content">
+	                    <div class="modal-header">
+	                        <h1>Weather Request</h1>
+	                    </div>
+	                    <div class="modal-body">
+	                        <p>Your request for weather information for the selected area has been processed below</p>
+	                    </div>
+	                    <div class="modal-footer"><button type="button" class="btn btn-warning" data-dismiss="modal">Close</button></div>
+
+	                </div>
+	            </div>
+	        </div> -->
+
+
+
+
+
+
+<!-- SCRIPTS -->
+	<script   src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="quotetech.js"></script>
+</body>
+</html>

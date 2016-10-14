@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.body {
+	background-color: green;
+}
+/*.blank{
+	background-image: url("images/tictactoe_grey_blank.png");
+	background-color: black;
+}
+.knots{
+	background-image: url("images/tictactoe_knots.png");
+}
+.cross{
+	background-image: url("images/tictactoe_grey_cross.png");
+}*/

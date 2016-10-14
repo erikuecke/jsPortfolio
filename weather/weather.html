@@ -1,0 +1,84 @@
+
+<html>
+<head>
+	<title>Weather</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="weather.css">
+</head>
+<body>
+	<div class="jumbotron">
+		<h1 class=" text-center">Weather App</h1>
+
+	</div>
+	<div class="container">
+		<div class="row">
+			  <div class="col-md-12">
+			  	<h3>By City and Country</h3>
+				  <div class="form-group">
+				    <label for="city">City</label>
+				    <input id="cityName" type="text" class="form-control" id="city">
+				  </div>
+				  <div class="form-group">
+				    <label for="country">Country</label>
+				    <input id="countryName" type="text" class="form-control" id="country">
+				  </div>
+			  </div>
+			  <div class="col-md-12" id="ored">
+			  	<h4 class="text-centered">- OR -</h4>
+			  </div>
+			  <div class="col-md-12">
+			  		<h3>Zip</h3>
+					<div class="form-group">
+						 <label for="zip">Zipcode</label>
+						 <input type="text" class="form-control" id="zip">
+					</div>
+					<button id="primary-btn" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Primary</button> 
+					
+			  	</div>
+			
+		</div>
+	</div>
+
+  	<div class="container">
+	  	<div class="row">
+	  		<div class="col-md-12 ">
+		  		<table class="table table-hover" id="theTable">
+		  			<tr>
+		  				<th>Location</th>
+		  				<th>Temp</th>
+		  				<th>Humidity</th>
+		  				<th>Cloud Cover</th>
+		  				<th>Wind Speed</th>
+		  			</tr>
+				</table>
+	  		</div>
+	  	</div>
+  	</div>
+
+  	<div id="myModal" class="modal fade success" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1>Weather Request</h1>
+                    </div>
+                    <div class="modal-body">
+                        <p>Your request for weather information for the selected area has been processed below</p>
+                    </div>
+                    <div class="modal-footer"><button type="button" class="btn btn-warning" data-dismiss="modal">Close</button></div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+	<script   src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="weather.js"></script>
+
+	<!-- API KEY: f03f7ccd80405068eeb6343b94d744d4 -->
+</body>
+</html>
