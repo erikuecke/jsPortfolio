@@ -21,46 +21,50 @@ $(function() {
 
 	// ----------------- Zipcode ----------------- 
 		var zipCode = $("#zip").val();
-		// url = "http://api.openweathermap.org/data/2.5/weather?zip=94040,us&units=imperial&appid=f03f7ccd80405068eeb6343b94d744d4";
+		 zurl = "http://api.openweathermap.org/data/2.5/weather?zip=94040,us&units=imperial&appid=f03f7ccd80405068eeb6343b94d744d4";
 		var zbase_url = "http://api.openweathermap.org/data/2.5/weather?zip="
 		var zfull_url = zbase_url + zipCode + ",us&units=imperial&appid=" + API_KEY;
 		
 
 	// ----------------- JSON INTERPRETATION ----------------- 
-
-				
+	var resultObj;		
 
 
 		$.ajax({
 			typ: "GET",
-			url: "http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=f03f7ccd80405068eeb6343b94d744d4",
-			success: function(xhr) {
-				resultObj = xhr;
-				
-				
-				
+			url: "http://api.openweathermap.org/data/2.5/weather?zip=94040,us&units=imperial&appid=f03f7ccd80405068eeb6343b94d744d4",
+			success: function(data) {
 
-				// tableData to add
-				
-			},
-			error: function() {
-				console.log('You made a typo');
+
+					resultObj = data;
+					console.log(resultObj);
+
+					try {
+						if(resultObj) {
+
+							
+								var cityName = resultObj.name;
+								var weatherObj = resultObj.weather[40];
+								var mainTempObj =  resultObj.main;
+								var windObj = resultObj.wind;
+								// tableData to add
+								var cityWeather = "<tr><td><p>" + cityName + "</p></td><td><p>" + mainTempObj.temp + "&deg;</p></td><td><p>" + mainTempObj.humidity + "&#37;</p></td><td id=\"icon\"><img src=\"http://openweathermap.org/img/w/" + weatherObj.icon + ".png\"></td><td><p>" + windObj.speed + " Mph</p></td></tr>";
+								$('#theTable').append(cityWeather);
+						} else {
+							throw new Error('The object variables are miss defines')
+						}
+					} catch(e) {
+							var errorMessage = ' test' + e.name + ' test' + e.message;
+							console.log(errorMessage);
+						}
+					
+
+					// ---- Object and property pulls for referennce
+					
 			}
-
 			
 		});
-		// console.log(resultObj);
 		
-		// var cityName = resultObj.name;
-		// var weatherObj = resultObj.weather[0];
-		// var mainTempObj =  resultObj.main;
-		// var windObj = resultObj.wind;
-
-
-		// var cityWeather = "<tr><td>" + cityName + "</td><td>" + mainTempObj.temp + "&deg;</td><td>" + mainTempObj.humidity + "&#37;</td><td>" + weatherObj.description + "</td><td>" + windObj.speed + " Mph</td></tr>";
-		// $('#theTable').append(cityWeather);
-
-				
 				
 		
 		// ---------- Conditional for City or Zipcode JSON request ---

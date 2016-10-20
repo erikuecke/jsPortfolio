@@ -3,3 +3,7 @@
 #ored {
 	margin: auto 0;
 }
+
+tr td#icon {
+	padding: 0;
+}
