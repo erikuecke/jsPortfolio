@@ -1,0 +1,16 @@
+{
+	"images": [
+		{
+			"imageSource": "images/photo_01.jpg",
+			"name": "Fluffy"
+		},
+		{
+			"imageSource": "images/photo_02.jpg",
+			"name": "Puppies"
+		},
+		{
+			"imageSource": "images/photo_03.jpg",
+			"name": "Boston"
+		}
+	]
+}
