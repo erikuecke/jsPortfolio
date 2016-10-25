@@ -15,14 +15,13 @@ $(function() {
 		// url = "http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=f03f7ccd80405068eeb6343b94d744d4";
 		var base_url = "http://api.openweathermap.org/data/2.5/weather?q="
 		var full_url = base_url + city + "," + country + "&units=imperial&appid=" + API_KEY;
-		var bad_url = "http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=feeb6343b94d744d4"
+
 
 	// ----------------- Zipcode ----------------- 
 		var zipCode = $("#zip").val();
 		// url = "http://api.openweathermap.org/data/2.5/weather?zip=94040,us&units=imperial&appid=f03f7ccd80405068eeb6343b94d744d4";
 		var zbase_url = "http://api.openweathermap.org/data/2.5/weather?zip="
 		var zfull_url = zbase_url + zipCode + ",us&units=imperial&appid=" + API_KEY;
-		var zbad_url = "http://api.openweathermap.org/data/2.5/weather?zip=94040,us&units=imperial&appid=eeb6343b94d744d4";
 		console.log(zfull_url);
 
 	// ----------------- JSON INTERPRETATION ----------------- 
@@ -58,13 +57,13 @@ $(function() {
 		if($("#cityName").val()) {
 		
 
-			xhr.open('GET', bad_url, true);
+			xhr.open('GET', full_url, true);
 			xhr.send(null);
 
 		
 		} else {
 
-			xhr.open('GET', zbad_url, true);
+			xhr.open('GET', zfull_url, true);
 			xhr.send(null);
 		}
 
