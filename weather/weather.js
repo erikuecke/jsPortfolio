@@ -1,6 +1,14 @@
 $(function() {
 
+	//forcast date
+	var weatherDate = new Date(1477479600 * 1000);
+	console.log(weatherDate);
+	var nextTime = new Date(1477566000 * 1000);
+	console.log(nextTime);
 	var API_KEY = "f03f7ccd80405068eeb6343b94d744d4";
+
+	var url5Day = http://api.openweathermap.org/data/2.5/forecast/daily?q=London&units=imperial&cnt=3&appid=f03f7ccd80405068eeb6343b94d744d4
+	var urlzip5Day = http://api.openweathermap.org/data/2.5/forecast/daily?zip=22204,us&units=imperial&cnt=3&appid=f03f7ccd80405068eeb6343b94d744d4
 
 	// -------------------------------------------------------
 	// 					City/Country Weather
@@ -43,7 +51,7 @@ $(function() {
 						$('#theTable').append(cityWeather);
 				
 				} else {
-					throw new Error('The object variables are miss defines');
+					throw new Error('The object variables are mis-defined');
 				}
 			} catch(e) {
 				console.log('test ' + e.name + ' test ' + e.message);

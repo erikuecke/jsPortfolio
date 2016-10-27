@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+/*#ored {
+	margin: auto 0;
+}*/
+
+tr td#icon {
+	padding: 0;
+}
+
+body {
+	color: black;
+    background-image: url("https://aos.iacpublishinglabs.com/question/aq/1400px-788px/clouds-that-look-like-cotton-balls_62557eb9-9d3c-43d8-9e88-8b5662829adf.jpg?domain=cx.aos.ask.com");
+    background-color: #cccccc;
+}
+
+table#theTable.table {
+	background: rgba(128, 128, 128, 0.3);
+}
+
+div.modal-content {
+	background: rgba(128, 128, 128, 0.9);
+}
+
+.panel-group .panel+.panel {
+    margin-top: 0px;
+}
+
+img {
+	max-width: 100%;
+}
+
+p {
+	font-size: .75em;
+}
+div.modal-content {
+	background-color: white;
+	color: red;
+}

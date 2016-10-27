@@ -39,8 +39,6 @@ $(function() {
 					resultObj = data;
 					console.log(resultObj);
 
-					try {
-						if(resultObj) {
 
 							
 								var cityName = resultObj.name;
@@ -50,13 +48,8 @@ $(function() {
 								// tableData to add
 								var cityWeather = "<tr><td><p>" + cityName + "</p></td><td><p>" + mainTempObj.temp + "&deg;</p></td><td><p>" + mainTempObj.humidity + "&#37;</p></td><td id=\"icon\"><img src=\"http://openweathermap.org/img/w/" + weatherObj.icon + ".png\"></td><td><p>" + windObj.speed + " Mph</p></td></tr>";
 								$('#theTable').append(cityWeather);
-						} else {
-							throw new Error('The object variables are miss defines')
-						}
-					} catch(e) {
-							var errorMessage = ' test' + e.name + ' test' + e.message;
-							console.log(errorMessage);
-						}
+					
+						
 					
 
 					// ---- Object and property pulls for referennce
