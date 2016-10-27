@@ -12,7 +12,8 @@ $(function() {
 	// -------------------------------------------------------
 
 	$("#primary-btn").on("click", function() {
-
+		// removing modal attribute
+		$('#primary-btn').removeAttr('data-toggle', 'modal');
 
 		var resultObj;
 		var urlRequest;
@@ -20,8 +21,11 @@ $(function() {
 
 		// --------- City and Country Entry ----------
 		// 
+		
 		var city = $("#cityName").val();
-
+		city = city.replace(/\s/g,'');
+		city = city.replace(/\s/g,'');
+		console.log(city);
 	
 		var base_url = "http://api.openweathermap.org/data/2.5/forecast/daily?q="
 		var full_url = base_url + city+ "&units=imperial&cnt=6&appid=" + API_KEY;
@@ -43,8 +47,9 @@ $(function() {
 				urlRequest = full_url;
 			} else {
 				$("#cityName").val('');
-				$('.modal-title').html('<h1>WARNING</h1>');
+				$('.modal-title').html('<h1>ATTENTION</h1>');
 				$('.modal-body').html('<h3>You have entered the information for City Incorrectly. Please check your entry.</h3>');
+				$("#cityName").val('');
 				return $('#primary-btn').attr('data-toggle', 'modal');
 
 			}
@@ -53,12 +58,18 @@ $(function() {
 			if (/\d{5}/.test(zipCode)) {
 				urlRequest = zfull_url;
 			} else {
-
-				$('.modal-title').html('<h1>WARNING</h1>');
+				$("#zip").val('');
+				$('.modal-title').html('<h1>ATTENTION</h1>');
 				$('.modal-body').html('<h3>You have entered the information for Zipcode Incorrectly. Please check your entry.</h3>');
 				return $('#primary-btn').attr('data-toggle', 'modal');
 			}
 			
+		} else {
+
+			$('.modal-title').html('<h1>ATTENTION</h1>');
+			$('.modal-body').html('<h3>You have not entered the required information for City or Zipcode. Please check your entry.</h3>');
+			return $('#primary-btn').attr('data-toggle', 'modal');
+
 		}
 
 		// ----------------- JSON INTERPRETATION ----------------- 
@@ -74,7 +85,7 @@ $(function() {
 
 				
 
-				$('#panels').append('<div class="panel-group"><div class="panel panel-default"><div class="panel-heading">' + cityName + '</div><div class="panel-body" id="panelContent' + panNum+ '"></div></div></div>');
+				$('#panels').prepend('<div class="panel-group"><div class="panel panel-default text-center"><div class="panel-heading"><h2>' + cityName + '</h2></div><div class="panel-body" id="panelContent' + panNum+ '"></div></div></div>');
 
 
 				// var dayOneDate = new Date(resultObj.dt * 1000)
@@ -112,6 +123,11 @@ $(function() {
 
 					
 					
+			},
+			error: function() {
+				$('.modal-title').html('<h1>ATTENTION</h1>');
+				$('.modal-body').html('<h3>The API REQUEST FAILED PLEASE TRY AGAIN</h3>');
+				return $('#primary-btn').attr('data-toggle', 'modal');
 			}
 			
 		});
