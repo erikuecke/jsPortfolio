@@ -20,7 +20,6 @@ $(function() {
 
 
 		// --------- City and Country Entry ----------
-		// 
 		
 		var city = $("#cityName").val();
 		city = city.replace(/\s/g,'');
@@ -107,22 +106,9 @@ $(function() {
 
 					$('#panelContent' + panNum).append('<div class="panel panel-default col-md-2"><div class="panel-heading">' + forecastDate + '</div><div class="panel-body text-center"><img src=\"http://openweathermap.org/img/w/' + forecastIcon + '.png\"><p>' + forecastDescript + '</p><h1>' + forecastTemp + '&#8457;</h1><p>Day High: ' + forecastHigh + '&#8457;</p><p>Day High: ' + forecastLow + '&#8457;</p></div></div>');
 
-					
 				}
 				panNum++;
-
-
 	
-
-				// tableData to add
-				// var locWeather = "<tr><td><p>" + cityName + "</p></td><td><p>" + mainTempObj.temp + "&deg;</p></td><td><p>" + mainTempObj.humidity + "&#37;</p></td><td id=\"icon\"><img src=\"http://openweathermap.org/img/w/" + weatherObj.icon + ".png\"></td><td><p>" + windObj.speed + " Mph</p></td></tr>";
-				// $('#theTable').append(cityWeather);
-					
-						
-					
-
-					
-					
 			},
 			error: function() {
 				$('.modal-title').html('<h1>ATTENTION</h1>');
@@ -137,6 +123,5 @@ $(function() {
 		$("#zip").val('');
 
 	});
-
 
 });
